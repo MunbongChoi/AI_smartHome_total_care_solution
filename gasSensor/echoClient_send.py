@@ -3,7 +3,8 @@ import time
 import gas_in
 import gas_out
 
-HOST = '192.168.1.14'
+# HOST = '192.168.1.14'
+HOST = 'localhost'
 PORT = 8888
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
