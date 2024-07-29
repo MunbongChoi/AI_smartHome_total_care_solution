@@ -41,6 +41,7 @@ def send_wav_file(file_path, server_host, server_port):
                         if not chunk:
                             break
                         client_socket.sendall(chunk)
+                        time.sleep(0.01)
 
                 print(f"Finished sending file {file_path} to server")
 
@@ -61,7 +62,7 @@ def send_wav_file(file_path, server_host, server_port):
 def start_client():
     SERVER_HOST = 'localhost'  # 서버의 IP 주소 (로컬 테스트의 경우 localhost)
     SERVER_PORT = 8888         # 서버의 포트 번호
-    FILE_PATH = './dataset/240411_01.wav'  # 전송할 WAV 파일 경로
+    FILE_PATH = './dataset/20240531163431.wav'  # 전송할 WAV 파일 경로
 
     # while True:
     send_wav_file(FILE_PATH, SERVER_HOST, SERVER_PORT)

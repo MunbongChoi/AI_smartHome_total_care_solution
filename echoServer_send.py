@@ -87,6 +87,8 @@ def handle_client(client_socket, addr):
         start_message = client_socket.recv(DEFAULT_CHUNK_SIZE)
         start_data = pickle.loads(start_message)
         folder_name = f"./saved_data/{start_data['temp_cid']}/"
+        if not os.path.exists(folder_name):
+            os.mkdir(folder_name)
         file_name = folder_name+start_data['file_name']
         file_size = start_data['file_size']
         chunk_size = start_data['chunk_size']
